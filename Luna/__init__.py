@@ -27,6 +27,8 @@ ENV = bool(os.environ.get("ENV", True))
 if ENV:
     TOKEN = os.environ.get("TOKEN", None)
     API_KEY = os.environ.get("API_KEY", None)
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
+    DB_URI = os.environ.get("DATABASE_URL")
     API_HASH = os.environ.get("API_HASH", None)
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
     tbot = TelegramClient(None, API_KEY, API_HASH)
