@@ -1,5 +1,5 @@
 telethon
-youtube_dl==2021.01.24
+youtube-dl==2021.3.3
 tswift
 youtube-search-python
 aiohttp
