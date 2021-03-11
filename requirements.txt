@@ -13,6 +13,7 @@ bing_image_downloader
 search_engine_parser
 pillow
 sqlalchemy
+psycopg2-binary
 dnspython
 pymongo
 better_profanity
