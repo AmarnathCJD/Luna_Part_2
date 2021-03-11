@@ -21,3 +21,4 @@ google_trans_new
 nudepy
 tldextract
 geopy
+pygments
