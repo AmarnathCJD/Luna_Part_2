@@ -1,10 +1,10 @@
 import threading
 from sqlalchemy import Column, String, UnicodeText
-from julia.modules.sql import BASE, SESSION
+from Luna.modules.sql import BASE, SESSION
 
 
 class URLBlackListFilters(BASE):
-    __tablename__ = "url_blacklist"
+    __tablename__ = "url_blacklists"
     chat_id = Column(String(14), primary_key=True)
     domain = Column(UnicodeText, primary_key=True, nullable=False)
 
