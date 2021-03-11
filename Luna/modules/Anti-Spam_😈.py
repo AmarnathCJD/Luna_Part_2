@@ -1,4 +1,4 @@
-from Luna import CMD_HELP, BOT_ID
+from Luna import CMD_HELP
 import nude
 import html
 import re
@@ -14,7 +14,7 @@ from Luna import *
 import better_profanity
 from better_profanity import profanity
 from google_trans_new import google_translator
-
+BOT_ID = 1624337697
 client = MongoClient()
 client = MongoClient(MONGO_DB_URI)
 db = client["missjuliarobot"]
