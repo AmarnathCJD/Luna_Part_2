@@ -19,3 +19,4 @@ pymongo
 better_profanity
 google_trans_new
 nudepy
+tldextract
