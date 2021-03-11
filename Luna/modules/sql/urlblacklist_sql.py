@@ -2,7 +2,7 @@ import threading
 from sqlalchemy import Column, String, UnicodeText
 from Luna.modules.sql import BASE, SESSION
 
-
+extend_existing=True
 class URLBlackListFilters(BASE):
     __tablename__ = "url_blacklist"
     chat_id = Column(String(14), primary_key=True)
