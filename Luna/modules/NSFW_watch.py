@@ -2,7 +2,7 @@ from Luna import tbot as borg
 from Luna.events import register
 
 from telethon import Button, custom, events, functions
-from Luna.function import is_nsfw
+from Luna.functions import is_nsfw
 import requests
 import string 
 import random 
