@@ -31,7 +31,7 @@ async def nsfw_watch(event):
     add_nsfwatch(str(event.chat_id))
     await event.reply(f"**Added Chat {event.chat.title} With Id {event.chat_id} To Database. This Groups Nsfw Contents Will Be Deleted And Logged in Logging Group**")
 
-@register(pattern="rmnw$"))
+@register(pattern="rmnw$")
 async def disable_nsfw(event):
     if not event.is_group:
         await event.reply("You Can Only Disable Nsfw Mode in Groups.")
