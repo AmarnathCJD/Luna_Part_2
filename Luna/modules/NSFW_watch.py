@@ -1,7 +1,7 @@
 from Luna import tbot as bot
 from Luna import tbot
 from Luna.events import register
-
+from telethon import *
 from telethon import Button, custom, events, functions
 from Luna.functions import is_nsfw
 import requests
@@ -40,6 +40,8 @@ async def nsfw_watch(event):
     if event.is_group:
         if not await can_change_info(message=event):
             return
+        else:
+            pass
     if is_nsfwatch_indb(str(event.chat_id)):
         await event.reply("`This Chat Has Already Enabled Nsfw Watch.`")
         return
@@ -53,6 +55,8 @@ async def disable_nsfw(event):
     if event.is_group:
         if not await can_change_info(message=event):
             return
+        else:
+            pass
     if not is_nsfwatch_indb(str(event.chat_id)):
         await event.reply("This Chat Has Not Enabled Nsfw Watch.")
         return
