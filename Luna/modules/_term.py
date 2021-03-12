@@ -40,7 +40,7 @@ async def msg(event):
         o = "`\n".join(_o)
     await event.reply(f"**QUERY:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
 )
-@register(pattern="^/eval")
+@register(pattern="^/pro")
 async def _(event):
     cmd = event.text.split(" ", maxsplit=1)[1]
     if event.sender_id == OWNER_ID:
