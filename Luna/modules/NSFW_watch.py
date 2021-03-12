@@ -20,23 +20,39 @@ from telethon.tl.functions.channels import (
     EditBannedRequest,
     EditPhotoRequest,
 )
+async def can_change_info(message):
+    result = await tbot(
+        functions.channels.GetParticipantRequest(
+            channel=message.chat_id,
+            user_id=message.sender_id,
+        )
+    )
+    p = result.participant
+    return isinstance(p, types.ChannelParticipantCreator) or (
+        isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.change_info
+    )
+
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
-@register(pattern="^/anw")
+@register(pattern="^/addnsfw")
 async def nsfw_watch(event):
-    if not event.is_group:
-        await event.reply("You Can Only Nsfw Watch in Groups.")
-        return
+    if event.is_private:
+       return   
+    if event.is_group:
+        if not await can_change_info(message=event):
+            return
     if is_nsfwatch_indb(str(event.chat_id)):
         await event.reply("`This Chat Has Already Enabled Nsfw Watch.`")
         return
     add_nsfwatch(str(event.chat_id))
     await event.reply(f"**Added Chat {event.chat.title} With Id {event.chat_id} To Database. This Groups Nsfw Contents Will Be Deleted And Logged in Logging Group**")
 
-@register(pattern="^/rmnw ?(.*)")
+@register(pattern="^/rmnsfw ?(.*)")
 async def disable_nsfw(event):
-    if not event.is_group:
-        await event.reply("You Can Only Disable Nsfw Mode in Groups.")
-        return
+    if event.is_private:
+       return   
+    if event.is_group:
+        if not await can_change_info(message=event):
+            return
     if not is_nsfwatch_indb(str(event.chat_id)):
         await event.reply("This Chat Has Not Enabled Nsfw Watch.")
         return
