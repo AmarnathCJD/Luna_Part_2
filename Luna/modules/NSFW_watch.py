@@ -20,7 +20,7 @@ from telethon.tl.functions.channels import (
     EditPhotoRequest,
 )
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
-@register(pattern="anw$")
+@register(pattern="^/anw")
 async def nsfw_watch(event):
     if not event.is_group:
         await event.reply("You Can Only Nsfw Watch in Groups.")
@@ -31,7 +31,7 @@ async def nsfw_watch(event):
     add_nsfwatch(str(event.chat_id))
     await event.reply(f"**Added Chat {event.chat.title} With Id {event.chat_id} To Database. This Groups Nsfw Contents Will Be Deleted And Logged in Logging Group**")
 
-@register(pattern="rmnw$")
+@register(pattern="^/rmnw")
 async def disable_nsfw(event):
     if not event.is_group:
         await event.reply("You Can Only Disable Nsfw Mode in Groups.")
