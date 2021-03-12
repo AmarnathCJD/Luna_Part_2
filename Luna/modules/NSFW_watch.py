@@ -1,4 +1,5 @@
-from Luna import tbot as borg
+from Luna import tbot as bot
+from Luna import tbot
 from Luna.events import register
 
 from telethon import Button, custom, events, functions
@@ -75,7 +76,7 @@ async def ws(event):
         else:
             ujwal = wstark.id
         try:
-            await borg.send_message(event.chat_id, f"**#NSFW_WATCH** \n**Chat :** `{hehe}` \n**Nsfw Sender - User / Bot :** `{ujwal}` \n**Chat Title:** `{ctitle}`")  
+            await tbot.send_message(event.chat_id, f"**#NSFW_WATCH** \n**Chat :** `{hehe}` \n**Nsfw Sender - User / Bot :** `{ujwal}` \n**Chat Title:** `{ctitle}`")  
             return
         except:
             return
