@@ -118,7 +118,7 @@ async def magnet_download(event):
     try:
         download = aria2.add_uris(uris, options=None, position=None)
     except Exception as e:
-        await event.edit("`Error:\n`" + str(e))
+        await event.reply("`Error:\n`" + str(e))
         return
 
     gid = download.gid
@@ -151,7 +151,7 @@ async def magnet_download(event):
             # print(str(e))
             pass
 
-    await event.edit("**File Downloaded Successfully:** `{}`".format(file.name))
+    await event.reply("**File Downloaded Successfully:** `{}`".format(file.name))
 
 
 async def progress_status(gid, event, previous):
@@ -175,31 +175,31 @@ async def progress_status(gid, event, previous):
                     + "\n\n"
                 )
                 if previous != msg:
-                    await event.edit(msg)
+                    await event.reply(msg)
                     previous = msg
             else:
                 logger.info(str(file.error_message))
-                await event.edit("Error : `{}`".format(str(file.error_message)))
+                await event.reply("Error : `{}`".format(str(file.error_message)))
                 return
             await asyncio.sleep(EDIT_SLEEP_TIME_OUT)
             await progress_status(gid, event, previous)
         else:
-            await event.edit("File Downloaded Successfully: `{}`".format(file.name))
+            await event.reply("File Downloaded Successfully: `{}`".format(file.name))
             return
     except Exception as e:
         if " not found" in str(e) or "'file'" in str(e):
-            await event.edit("Download Canceled :\n`{}`".format(file.name))
+            await event.reply("Download Canceled :\n`{}`".format(file.name))
             return
         elif " depth exceeded" in str(e):
             file.remove(force=True)
-            await event.edit(
+            await event.reply(
                 "Download Auto Canceled :\n`{}`\nYour Torrent/Link is Dead.".format(
                     file.name
                 )
             )
         else:
             logger.info(str(e))
-            await event.edit("Error :\n`{}`".format(str(e)))
+            await event.reply("Error :\n`{}`".format(str(e)))
             return
 
 
