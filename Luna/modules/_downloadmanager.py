@@ -13,12 +13,16 @@ from pySmartDL import SmartDL
 from Luna import tbot as borg
 from Luna.events import register
 from Luna.functions import humanbytes, progress
-
+owner = 1221693726
 
 @register(pattern="dwl ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
+    if event.sender_id == owner:
+           pass
+    else:
+           return
     mone = await event.reply("Processing ...")
     input_str = event.pattern_match.group(1)
     if not os.path.isdir(tmp):
