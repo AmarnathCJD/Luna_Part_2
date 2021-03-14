@@ -22,3 +22,4 @@ nudepy
 tldextract
 geopy
 pygments
+pySmartDL
