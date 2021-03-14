@@ -12,7 +12,7 @@ from Luna import TEMP_DOWNLOAD_DIRECTORY as tmp
 from pySmartDL import SmartDL
 from Luna import tbot as borg
 from Luna.events import register
-from Luna.functions import humanbytes, progress
+from Luna.utils import humanbytes, progress
 owner = 1221693726
 
 @register(pattern="^/dwl ?(.*)")
