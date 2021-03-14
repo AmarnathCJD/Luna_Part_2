@@ -15,7 +15,7 @@ from Luna.events import register
 from Luna.functions import humanbytes, progress
 owner = 1221693726
 
-@register(pattern="dwl ?(.*)")
+@register(pattern="^/dwl ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
