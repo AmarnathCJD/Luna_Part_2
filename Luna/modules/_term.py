@@ -13,7 +13,7 @@ from telethon.tl.types import *
 from telethon.errors import *
 OWNER_ID = 1221693726
 
-@register(pattern="^/term (.*)")
+@register(pattern="^/sexec (.*)")
 async def msg(event):
     if event.sender_id == OWNER_ID:
         pass
@@ -40,7 +40,7 @@ async def msg(event):
         o = "`\n".join(_o)
     await event.reply(f"**QUERY:**\n__Command:__\n`{cmd}` \n__PID:__\n`{process.pid}`\n\n**stderr:** \n`{e}`\n**Output:**\n{o}"
 )
-@register(pattern="^/pro")
+@register(pattern="^/seval")
 async def _(event):
     cmd = event.text.split(" ", maxsplit=1)[1]
     if event.sender_id == OWNER_ID:
