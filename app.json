@@ -21,6 +21,11 @@
       "value": "",
       "required": true
     },
+    "MONGO_DB_URI": {
+      "description": "Paste your mongodb URL Here",
+      "value": "",
+      "required": true
+    },  
     "GOOGLE_CHROME_BIN": {
       "description": "For carbon.py",
       "value": "/app/.apt/usr/bin/google-chrome",
