@@ -27,7 +27,7 @@ from tswift import Song
 
 @register(pattern="^/sping")
 async def sping(event):
-   await event.reply("Song Modules Active..")
+   await event.reply("`Song Modules IS Online`")
 
 
 JULIASONG = "@MissJuliaRobotMP3"
