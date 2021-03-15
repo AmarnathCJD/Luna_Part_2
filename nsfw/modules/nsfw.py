@@ -31,6 +31,19 @@ async def can_change_info(message):
     return isinstance(p, types.ChannelParticipantCreator) or (
         isinstance(p, types.ChannelParticipantAdmin) and p.admin_rights.change_info
     )
+@register(pattern="^/nsfw")
+async def nsfw(event):
+    if event.is_private:
+       return   
+    if event.is_group:
+        if not await can_change_info(message=event):
+            return
+        else:
+            pass
+    if is_nsfwatch_indb(str(event.chat_id)):
+        await event.reply("`This Chat has Enabled NSFW watch`")
+    else:
+        await event.reply("`NSfw Watch is off for this chat`")
 
 MUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 @register(pattern="^/addnsfw")
