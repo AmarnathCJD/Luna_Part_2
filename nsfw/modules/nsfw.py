@@ -3,7 +3,7 @@ from nsfw import tbot
 from nsfw.events import register
 from telethon import *
 from telethon import Button, custom, events, functions
-from Luna.utils import is_nsfw
+from Luna.func import is_nsfw
 import requests
 import string 
 import random 
