@@ -36,9 +36,6 @@ async def nsfw(event):
     if event.is_private:
        return   
     if event.is_group:
-        if not await can_change_info(message=event):
-            return
-        else:
             pass
     if is_nsfwatch_indb(str(event.chat_id)):
         await event.reply("`This Chat has Enabled NSFW watch`")
