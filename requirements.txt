@@ -22,3 +22,5 @@ nudepy
 tldextract
 geopy
 pygments
+search_engine_parser
+bing_image_downloader
