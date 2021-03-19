@@ -1276,6 +1276,6 @@ __help__ = """
 `{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`
 
 **Note**: __You can't set new welcome/goodbye message before deleting the previous one.__
-"""
+""" 
 
 CMD_HELP.update({file_helpo: [file_helpo, __help__]})
