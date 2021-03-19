@@ -123,7 +123,7 @@ async def _(event):
             buttons=[
                 [
                     Button.inline(
-                        "Remove Warn ✨", data=f"rm_warn-{reply_message.sender_id}"
+                        "Remove warn (admin only)", data=f"rm_warn-{reply_message.sender_id}"
                     ),
                     Button.inline(
                         "Rules ✝️", data=f"start-ruleswarn-{reply_message.sender_id}"
@@ -138,7 +138,7 @@ async def _(event):
             buttons=[
                 [
                     Button.inline(
-                        "Remove Warn ✖️", data=f"rm_warn-{reply_message.sender_id}"
+                        "Remove warn (admin only)", data=f"rm_warn-{reply_message.sender_id}"
                     )
                 ]
             ],
@@ -227,7 +227,7 @@ async def _(event):
             buttons=[
                 [
                     Button.inline(
-                        "Remove Warn ✖️", data=f"rm_warn-{r_sender_id}"
+                        "Remove warn (admin only)", data=f"rm_warn-{r_sender_id}"
                     ),
                     Button.inline(
                         "Rules ✝️", data=f"start-ruleswarn-{r_sender_id}"
@@ -242,7 +242,7 @@ async def _(event):
             buttons=[
                 [
                     Button.inline(
-                        "Remove Warn ✖️", data=f"rm_warn-{r_sender_id}"
+                        "Remove warn (admin only)", data=f"rm_warn-{r_sender_id}"
                     )
                 ]
             ],
