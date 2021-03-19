@@ -110,11 +110,14 @@ async def _(event):
             await event.reply(reply, parse_mode="html")
             return
     else:
-        reply = "User <a href='tg://user?id={}'>{}</a> has {}/{} warnings. watch out!".format(
+        pro = "User <a href='tg://user?id={}'>{}</a> has {}/{} warnings. watch out!".format(
             reply_message.sender_id, reply_message.sender.first_name, num_warns, limit
         )
-        if warn_reason:
-            reply += "\nReason: {}".format(html.escape(warn_reason))
+        if warn_reason = 'None':
+            reply = pro
+        else:
+            pro += "\nReason: {}".format(html.escape(warn_reason))
+            reply = pro
     chat_id = event.chat_id
     rules = rulesql.get_rules(chat_id)
     if rules:
