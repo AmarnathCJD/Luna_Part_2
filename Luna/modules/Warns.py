@@ -39,7 +39,7 @@ async def can_change_info(message):
     )
 
 
-@register(pattern="^/warn(?: |$)(.*)")
+@register(pattern="^/(warn|dwarn)(?: |$)(.*)")
 async def _(event):
  try:
    if event.fwd_from:
@@ -51,13 +51,17 @@ async def _(event):
             pass
         else:
             return            
-   quew = event.pattern_match.group(1)
-     
+   quew = event.pattern_match.group(2)
+   del = event.pattern_match.group(1)
    if event.reply_to_msg_id:
     warn_reason = event.text[len("/warn ") :]
     if not warn_reason:
         warn_reason = "None"
     reply_message = await event.get_reply_message()
+    if del == "dwarn":
+         await reply_message.delete()
+    else:
+        pass
     if not await is_register_admin(event.input_chat, reply_message.sender_id):
         pass
     else:
@@ -253,7 +257,7 @@ async def _(event):
          )
  except Exception as e:
         print (e)
-@register(pattern="^/dwarn(?: |$)(.*)")
+@register(pattern="^/gwarn(?: |$)(.*)")
 async def _(event):
  try:
    if event.fwd_from:
