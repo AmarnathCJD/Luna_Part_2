@@ -41,6 +41,7 @@ async def can_change_info(message):
 
 @register(pattern="^/(warn|dwarn)(?: |$)(.*)")
 async def _(event):
+ yep = event.pattern_match.group(1)
  try:
    if event.fwd_from:
         return
@@ -52,13 +53,12 @@ async def _(event):
         else:
             return            
    quew = event.pattern_match.group(2)
-   del = event.pattern_match.group(1)
    if event.reply_to_msg_id:
     warn_reason = event.text[len("/warn ") :]
     if not warn_reason:
         warn_reason = "None"
     reply_message = await event.get_reply_message()
-    if del == "dwarn":
+    if yep == "dwarn":
          await reply_message.delete()
     else:
         pass
