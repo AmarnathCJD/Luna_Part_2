@@ -113,7 +113,7 @@ async def _(event):
         pro = "User <a href='tg://user?id={}'>{}</a> has {}/{} warnings. watch out!".format(
             reply_message.sender_id, reply_message.sender.first_name, num_warns, limit
         )
-        if warn_reason = 'None':
+        if warn_reason == "None":
             reply = pro
         else:
             pro += "\nReason: {}".format(html.escape(warn_reason))
