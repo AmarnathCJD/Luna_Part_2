@@ -110,7 +110,7 @@ async def _(event):
             await event.reply(reply, parse_mode="html")
             return
     else:
-        reply = "<a href='tg://user?id={}'>{}</a> has {}/{} warnings... watch out!".format(
+        reply = "User <a href='tg://user?id={}'>{}</a> has {}/{} warnings. watch out!".format(
             reply_message.sender_id, reply_message.sender.first_name, num_warns, limit
         )
         if warn_reason:
