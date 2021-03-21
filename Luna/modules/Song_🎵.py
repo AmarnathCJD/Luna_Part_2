@@ -124,7 +124,7 @@ async def download_song(v_url):
                 )
             ],
         )
-        await y.forward_to(JULIASONG)
+        await rkp.delete()
         os.system("rm -rf *.mp3")
         os.system("rm -rf *.webp")
 
@@ -207,7 +207,7 @@ async def download_video(v_url):
             caption=rip_data["title"],
         )
 
-        await y.forward_to(JULIAVSONG)
+        await rkp.delete()
         os.system("rm -rf *.mp4")
         os.system("rm -rf *.webp")
 
@@ -248,10 +248,6 @@ __help__ = """
  - /song <songname artist(optional)>: uploads the song in it's best quality available
  - /videosong <songname artist(optional)>: uploads the video song in it's best quality available
  - /lyrics <songname artist(optional)>: sends the complete lyrics of the song provided as input
-
-**Also check out - **
- @MissJuliaRobotMP3
- @MissJuliaRobotMP4
 """
 
 CMD_HELP.update({file_helpo: [file_helpo, __help__]})
