@@ -2,6 +2,8 @@ OWNER_ID = 1221693726
 from Luna import tbot
 from Luna.events import register
 from Luna.modules.sql.mute_sql import is_muted, mute, unmute
+from telethon import events
+
 
 @register(pattern="^/gmute ?(.*)")
 async def gmute(event):
