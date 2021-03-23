@@ -13,9 +13,7 @@ async def gmute(event):
     else:
       return
     reply = await event.get_reply_message()
-    iid = reply.sender_id
-    replied_user = await event.tbot(GetFullUserRequest(iid))
-    userid = replied_user.user.id
+    userid = reply.sender_id
     await event.reply('hi')
     if is_muted(userid, "gmute"):
         return await event.reply("This user is already gmuted")
