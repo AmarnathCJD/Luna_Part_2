@@ -25,8 +25,9 @@ async def gmute(event):
         await event.reply("Successfully gmuted that person")
 
 
-@command(incoming=True)
-async def watcher(event):
+
+@tbot.on(events.NewMessage(pattern=None))
+async def lel(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
 
