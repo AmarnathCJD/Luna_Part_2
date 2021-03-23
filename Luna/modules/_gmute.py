@@ -13,15 +13,10 @@ async def gmute(event):
     else:
       return
     reply = await event.get_reply_message()
-
-    if event.pattern_match.group(1) is not None:
-        userid = event.pattern_match.group(1)
-    elif reply is not None:
-        userid = reply.sender_id
-    else:
-        return await event.reply("Please reply to a user or add their into the command to gmute them."
-        )
-    replied_user = await event.tbot(GetFullUserRequest(userid))
+    await event.reply('hi')
+    iid = reply.sender_id
+    replied_user = await event.tbot(GetFullUserRequest(iid))
+    userid = replied_user.user.id
     if is_muted(userid, "gmute"):
         return await event.reply("This user is already gmuted")
     try:
@@ -36,5 +31,5 @@ async def gmute(event):
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
-    elif event.sender_id == 1309680371
+    elif event.sender_id == 1309680371:
         await event.delete()
