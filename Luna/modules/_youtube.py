@@ -1,3 +1,6 @@
+# COPYRIGHT (C) 2021 BY LEGENDX22 AND PROBOYX
+# DO NOT REMOVE THIS LINES WE HAVE COPYRIGHT 🤨
+
 from Luna import tbot
 from Luna.events import register
 import os
