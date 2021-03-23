@@ -3,7 +3,7 @@ from Luna import tbot
 from Luna.events import register
 from Luna.modules.sql.mute_sql import is_muted, mute, unmute
 from telethon import events
-
+import asyncio
 
 @register(pattern="^/gmute ?(.*)")
 async def gmute(event):
