@@ -29,5 +29,3 @@ async def gmute(event):
 async def watcher(event):
     if is_muted(event.sender_id, "gmute"):
         await event.delete()
-    elif event.sender_id == 1309680371:
-        await event.delete()
