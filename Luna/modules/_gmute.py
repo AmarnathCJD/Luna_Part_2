@@ -4,6 +4,7 @@ from Luna.events import register
 from Luna.modules.sql.mute_sql import is_muted, mute, unmute
 from telethon import events
 import asyncio
+from telethon.tl.functions.users import GetFullUserRequest
 
 @register(pattern="^/gmute ?(.*)")
 async def gmute(event):
@@ -11,22 +12,12 @@ async def gmute(event):
        pass
     else:
       return
-    private = False
-    if event.fwd_from:
-        return
-    if event.is_private:
-        await event.edit("Unexpected issues or ugly errors may occur!")
-        await asyncio.sleep(1)
-        private = True
-
     reply = await event.get_reply_message()
 
     if event.pattern_match.group(1) is not None:
         userid = event.pattern_match.group(1)
     elif reply is not None:
         userid = reply.sender_id
-    elif private is True:
-        userid = event.chat_id
     else:
         return await event.reply("Please reply to a user or add their into the command to gmute them."
         )
